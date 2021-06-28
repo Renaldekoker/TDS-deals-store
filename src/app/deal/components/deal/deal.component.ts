@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IDeal} from "../../state/deal.model";
 
 @Component({
   selector: 'app-deal',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./deal.component.scss']
 })
 export class DealComponent implements OnInit {
-
+  @Input()
+  deal: IDeal | undefined;
+  
   constructor() { }
 
   ngOnInit(): void {

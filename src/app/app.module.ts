@@ -11,6 +11,8 @@ import {AllDealsComponent} from "./deal/components/all-deals/all-deals.component
 import { TopNavComponent } from './common/components/top-nav/top-nav.component';
 import { DealComponent } from './deal/components/deal/deal.component';
 import { BottomNavComponent } from './common/components/bottom-nav/bottom-nav.component';
+import {AkitaNgDevtools} from "@datorama/akita-ngdevtools";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { BottomNavComponent } from './common/components/bottom-nav/bottom-nav.co
     BottomNavComponent
   ],
   imports: [
+    AkitaNgDevtools.forRoot(),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     { provide: IDealsApiService, useClass: environment.production ? DealsApiService : MockDealsApiService }

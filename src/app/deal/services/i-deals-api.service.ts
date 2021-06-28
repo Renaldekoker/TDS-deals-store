@@ -1,5 +1,6 @@
 import {IDeal} from "../state/deal.model";
 import {Observable} from "rxjs/index";
+import {IServerDeal} from "../state/server-deal.model";
 
 export abstract class IDealsApiService {
   protected constructor() { }
@@ -7,7 +8,7 @@ export abstract class IDealsApiService {
   /*
   * Return all deals and filter by optional filter params
   * */
-  abstract getAllDeals(storeID: number, onSale: boolean): Observable<IDeal[]>;
-  abstract getDealByID(id: string): Observable<IDeal  | undefined>;
+  abstract getAllDeals(onSale?: boolean): Observable<IServerDeal[]>;
+  abstract getDealByID(id: string): Observable<IServerDeal  | undefined>;
 }
 

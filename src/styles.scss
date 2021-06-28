@@ -11,6 +11,7 @@ body {
 .flex-grid {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .col {
@@ -18,15 +19,15 @@ body {
 }
 
 .col-2 {
-  width: 49%;
+  flex: 1 0 49%;
 }
 
 .col-3 {
-  width: 32%;
+  flex: 1 0 32%;
 }
 
 .col-4 {
-  width: 24%;
+  flex: 1 0 24%;
 }
 
 @media (max-width: 576px) {

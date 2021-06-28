@@ -1,1 +1,5 @@
-<p>all-deals works!</p>
+<div class="deals-container flex-grid">
+  <div class="col-3" *ngFor="let deal of (allDeals$ | async)">
+    <app-deal [deal]="deal"></app-deal>
+  </div>
+</div>

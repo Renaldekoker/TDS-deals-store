@@ -7,7 +7,7 @@ export interface DealState extends EntityState<IDeal> {}
 export interface DealUIState extends EntityState<IDealUI> {}
 
 @Injectable({ providedIn: 'root' })
-@StoreConfig({ name: 'product' })
+@StoreConfig({ name: 'deal' })
 export class DealStore extends EntityStore<DealState> {
 
   constructor() {
