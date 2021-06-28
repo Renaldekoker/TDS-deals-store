@@ -1,0 +1,53 @@
+.top-nav-container {
+  max-width: 100%;
+  border-radius: 0 0 15px 15px;
+  height: 100px;
+  padding: 10px;
+  box-shadow: 0 6px 4px -2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 6px 4px -2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 6px 4px -2px rgba(0,0,0,0.1);
+
+  .logo-img {
+    height: 100%;
+  }
+
+  .brand-container {
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    .brand-text {
+      padding-left: 10px;
+      font-size: 22px;
+    }
+  }
+
+  .menu-items-container {
+    float: right;
+    height: 100%;
+    padding-right: 50px;
+    line-height: 6;
+
+    .menu-item {
+      padding-left: 20px;
+      text-decoration: none;
+      color: black;
+    }
+    .menu-item.active {
+      color: lightseagreen;
+    }
+
+
+  }
+}
+
+
+
+@media (max-width: 576px) {
+  .top-nav-container {
+    height: 70px;
+
+    .menu-items-container {
+      display: none;
+    }
+  }
+}
