@@ -1,4 +1,10 @@
 .top-nav-container {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
   max-width: 100%;
   border-radius: 0 0 15px 15px;
   height: 100px;
@@ -33,6 +39,7 @@
       color: black;
     }
     .menu-item.active {
+      font-weight: bold;
       color: lightseagreen;
     }
 

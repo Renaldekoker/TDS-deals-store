@@ -1,7 +1,8 @@
-html, body {
-  margin: 0;
+body {
   font-family: Verdana, serif;
+  margin: 140px 0 0;
 }
+
 
 /*
  * Custom Responsive Grid
@@ -29,6 +30,9 @@ html, body {
 }
 
 @media (max-width: 576px) {
+  body {
+    margin: 120px 0 100px 0;
+  }
   .flex-grid {
     display: block;
   }

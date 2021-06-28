@@ -9,12 +9,16 @@ import {DealsApiService} from "./deal/services/deals-api.service";
 import {MockDealsApiService} from "./deal/services/mock-deals-api.service";
 import {AllDealsComponent} from "./deal/components/all-deals/all-deals.component";
 import { TopNavComponent } from './common/components/top-nav/top-nav.component';
+import { DealComponent } from './deal/components/deal/deal.component';
+import { BottomNavComponent } from './common/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllDealsComponent,
-    TopNavComponent
+    TopNavComponent,
+    DealComponent,
+    BottomNavComponent
   ],
   imports: [
     BrowserModule,

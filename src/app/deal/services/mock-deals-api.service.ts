@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {IDealsApiService} from "./i-deals-api.service";
 import {IDeal} from "../state/deal.model";
-import {Observable, of} from "rxjs/index";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
