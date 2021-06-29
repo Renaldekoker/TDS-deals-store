@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Verdana, serif;
+  margin: 140px 0 0;
+}
+
+
+/*
+ * Custom Responsive Grid
+ */
+
+.flex-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: auto;
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
+}
+
+.col {
+  flex: 1;
+  max-width: 100%;
+}
+
+.col-2 {
+  flex: 1 0 49%;
+  max-width: 49%;
+}
+
+.col-3 {
+  flex: 1 0 32%;
+  max-width: 32%;
+}
+
+.col-4 {
+  flex: 1 0 24%;
+  max-width: 24%;
+}
+
+@media (max-width: 576px) {
+  body {
+    margin: 120px 0 100px 0;
+  }
+  .flex-grid {
+    display: block;
+    max-width: 95%;
+  }
+}
+
+
+
