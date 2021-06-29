@@ -11,10 +11,22 @@
       </svg>
     </div>
   </div>
+  <div class="filter" (click)="filtersExpanded = !filtersExpanded">
+    <span class="filter-title">Filters</span>
+    <img width="20" class="expand-arrow"
+         [src]="filtersExpanded ? 'assets/img/logos/arrow-up.svg' : 'assets/img/logos/arrow-down.svg'" alt="expand-arrow">
+  </div>
+  <div class="filters-content" *ngIf="filtersExpanded">
+    <label for="onSale">On Sale</label>
+    <input #onSale type="checkbox" id="onSale" checked="" (change)="filterBy(onSale.checked)"/>
+  </div>
   <div class="break line">
   </div>
-  <div class="col-3 deal-col" *ngFor="let deal of filteredDeals">
+  <div class="col-3 deal-col" *ngFor="let deal of filteredDeals" [@flyInOut]="'in'">
     <app-deal [deal]="deal"></app-deal>
+  </div>
+  <div class="loading" *ngIf="isLoading$ | async">
+    <img src="assets/img/logos/spinner.gif" alt="loading spinner"  width="150" />
   </div>
 </div>
 

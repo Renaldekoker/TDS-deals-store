@@ -8,7 +8,7 @@ export abstract class IDealsApiService {
   /*
   * Return all deals and filter by optional filter params
   * */
-  abstract getAllDeals(onSale?: boolean): Observable<IServerDeal[]>;
+  abstract getAllDeals(onSale: boolean): Observable<IServerDeal[]>;
   abstract getDealByID(id: string): Observable<IServerDeal  | undefined>;
 }
 

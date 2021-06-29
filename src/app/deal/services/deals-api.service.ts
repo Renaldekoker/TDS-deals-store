@@ -16,9 +16,8 @@ export class DealsApiService implements IDealsApiService {
     private http: HttpClient
   ) { }
 
-  getAllDeals(onSale?: boolean): Observable<IServerDeal[]> {
-    let parameters = '';
-    parameters += onSale ? `?onSale=${onSale ? 1 : 0}` : '';
+  getAllDeals(onSale: boolean): Observable<IServerDeal[]> {
+    let parameters = `?isOnSale=${onSale ? 1 : 0}`;
 
     return this.http.get<IServerDeal[]>(`${this.apiURL}${parameters}`);
   }

@@ -3,12 +3,14 @@ import {DealStore} from "../state/deal.store";
 import {IDealsApiService} from "./i-deals-api.service";
 import {map, tap} from "rxjs/operators";
 import {DealQuery} from "../state/deal.query";
+import {Observable} from "rxjs/index";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DealFacadeService {
   allDeals$ = this.query.selectAll();
+  isLoading$ = this.query.selectLoading();
 
   constructor(
     private store: DealStore,
@@ -19,7 +21,7 @@ export class DealFacadeService {
   /*
   * Fetch deals from API, translate and set in store
   * */
-  fetchDeals(onSale?: boolean): void {
+  fetchDeals(onSale: boolean): void {
     this.apiService.getAllDeals(onSale).pipe(
       map(response => {
         return response.map(deal => {

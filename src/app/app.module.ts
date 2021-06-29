@@ -13,6 +13,7 @@ import { DealComponent } from './deal/components/deal/deal.component';
 import { BottomNavComponent } from './common/components/bottom-nav/bottom-nav.component';
 import {AkitaNgDevtools} from "@datorama/akita-ngdevtools";
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import {HttpClientModule} from "@angular/common/http";
     AkitaNgDevtools.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
-    { provide: IDealsApiService, useClass: environment.production ? DealsApiService : MockDealsApiService }
+    { provide: IDealsApiService, useClass: /*environment.production ?*/ DealsApiService /*: MockDealsApiService*/ }
   ],
   bootstrap: [AppComponent]
 })
