@@ -4,6 +4,7 @@ import {IDealsApiService} from "./i-deals-api.service";
 import {map, tap} from "rxjs/operators";
 import {DealQuery} from "../state/deal.query";
 import {Observable} from "rxjs/index";
+import {IDeal} from "../state/deal.model";
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class DealFacadeService {
             isOnSale: deal.isOnSale === '1',
             savings: deal.savings,
             storeID: deal.storeID
-          }
+          } as IDeal
         });
       })
     ).subscribe(deals => this.store.set(deals))

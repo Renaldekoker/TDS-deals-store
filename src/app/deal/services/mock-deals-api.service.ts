@@ -203,8 +203,8 @@ export class MockDealsApiService implements IDealsApiService {
     ]
   }
 
-  getAllDeals(onSale?: boolean): Observable<IServerDeal[]> {
-    return of(this.allDeals);
+  getAllDeals(onSale: boolean): Observable<IServerDeal[]> {
+    return of(this.allDeals.filter(d => onSale ? d.isOnSale === '1' : d.isOnSale === '0'));
   }
 
   getDealByID(id: string): Observable<IServerDeal  | undefined> {

@@ -3,8 +3,7 @@ import {DealFacadeService} from "../../services/deal-facade.service";
 import {Subject} from "rxjs";
 import {Observable} from "rxjs/index";
 import {IDeal} from "../../state/deal.model";
-import {debounceTime, distinctUntilChanged, switchMap, takeUntil} from "rxjs/internal/operators";
-import {map} from "rxjs/operators";
+import {map, debounceTime, distinctUntilChanged, switchMap, takeUntil} from "rxjs/operators";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 
 
