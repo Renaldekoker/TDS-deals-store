@@ -4,4 +4,7 @@
     <span class="price" [style.text-decoration]="deal.isOnSale ? 'line-through' : ''">${{deal.price}} </span>
     <span class="sale-price"> ${{deal.salePrice}}</span>
   </p>
+  <div class="view-deal-btn" (click)="viewDeal(deal.id)">
+    View More
+  </div>
 </div>
