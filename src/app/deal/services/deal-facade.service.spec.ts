@@ -3,7 +3,6 @@ import { DealStore } from '../state/deal.store';
 import { IDealsApiService } from './i-deals-api.service';
 import { DealQuery } from '../state/deal.query';
 import { DealFacadeService } from './deal-facade.service';
-import {IDeal} from "../state/deal.model";
 import {MockDealsApiService} from "./mock-deals-api.service";
 
 describe('DealFacadeService', () => {

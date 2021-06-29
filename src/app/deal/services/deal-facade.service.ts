@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import {DealStore} from "../state/deal.store";
 import {IDealsApiService} from "./i-deals-api.service";
-import {map, tap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 import {DealQuery} from "../state/deal.query";
-import {Observable} from "rxjs/index";
 import {IDeal} from "../state/deal.model";
 
 @Injectable({

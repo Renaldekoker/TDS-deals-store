@@ -1,5 +1,4 @@
-import {IDeal} from "../state/deal.model";
-import {Observable} from "rxjs/index";
+import {Observable} from "rxjs";
 import {IServerDeal} from "../state/server-deal.model";
 
 export abstract class IDealsApiService {
