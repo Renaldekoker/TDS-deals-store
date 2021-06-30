@@ -9,4 +9,8 @@ export class DealQuery extends QueryEntity<DealState> {
     super(store);
     this.createUIQuery();
   }
+
+  countStoreDeals(storeID: string): number {
+    return this.getAll().filter(d => d.storeID === storeID).length;
+  }
 }

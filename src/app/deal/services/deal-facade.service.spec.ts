@@ -4,6 +4,7 @@ import { IDealsApiService } from './i-deals-api.service';
 import { DealQuery } from '../state/deal.query';
 import { DealFacadeService } from './deal-facade.service';
 import {MockDealsApiService} from "./mock-deals-api.service";
+import {IStoresApiService} from "../../store/services/i-stores-api.service";
 
 describe('DealFacadeService', () => {
   let service: DealFacadeService;
@@ -16,7 +17,8 @@ describe('DealFacadeService', () => {
         DealFacadeService,
         {provide: IDealsApiService, useClass: MockDealsApiService},
         DealStore,
-        DealQuery
+        DealQuery,
+        IStoresApiService
       ]
     });
     service = TestBed.inject(DealFacadeService);

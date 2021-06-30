@@ -17,6 +17,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DealDetailComponent } from './deal/components/deal-detail/deal-detail.component';
 import {IStoresApiService} from "./store/services/i-stores-api.service";
 import {StoresApiService} from "./store/services/stores-api.service";
+import { AllStoresComponent } from './store/components/all-stores/all-stores.component';
+import { StoreComponent } from './store/components/store/store.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {StoresApiService} from "./store/services/stores-api.service";
     TopNavComponent,
     DealComponent,
     BottomNavComponent,
-    DealDetailComponent
+    DealDetailComponent,
+    AllStoresComponent,
+    StoreComponent
   ],
   imports: [
     AkitaNgDevtools.forRoot(),
