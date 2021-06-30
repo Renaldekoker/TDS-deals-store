@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import {IDealsApiService} from "./i-deals-api.service";
 import {Observable, of} from "rxjs";
-import {IServerDeal} from "../state/server-deal.model";
+import {IServerDeal} from "../state/models/server-deal.model";
+import {IServerDealDetail} from "../state/models/server-deal-detail.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockDealsApiService implements IDealsApiService {
   private readonly allDeals: IServerDeal[];
+  private readonly allDealsDetails: IServerDealDetail[];
   constructor() {
     this.allDeals = [
       {
@@ -36,7 +38,7 @@ export class MockDealsApiService implements IDealsApiService {
         "title": "Thief: Deadly Shadows",
         "metacriticLink": "/game/pc/thief-deadly-shadows",
         "dealID": "EX0oH20b7A1H2YiVjvVx5A0HH%2F4etw3x%2F6YMGVPpKbA%3D",
-        "storeID": "1",
+        "storeID": "2",
         "gameID": "396",
         "salePrice": "0.98",
         "normalPrice": "8.99",
@@ -57,7 +59,7 @@ export class MockDealsApiService implements IDealsApiService {
         "title": "Just Cause 2",
         "metacriticLink": "/game/pc/just-cause-2",
         "dealID": "z4El8C19yCEHrk1%2ByEedebThQVbblI7H0Z%2BAmxgZiS8%3D",
-        "storeID": "1",
+        "storeID": "3",
         "gameID": "180",
         "salePrice": "1.49",
         "normalPrice": "14.99",
@@ -72,132 +74,94 @@ export class MockDealsApiService implements IDealsApiService {
         "lastChange": 1621536477,
         "dealRating": "9.4",
         "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/8190/capsule_sm_120.jpg?t=1593180404"
+      }
+    ]
+
+    this.allDealsDetails = [
+      {
+        "gameInfo": {
+          "storeID": "1",
+          "gameID": "93503",
+          "name": "BioShock Infinite 3",
+          "steamAppID": "8870",
+          "salePrice": "7.49",
+          "retailPrice": "29.99",
+          "steamRatingText": "Overwhelmingly Positive",
+          "steamRatingPercent": "95",
+          "steamRatingCount": "52167",
+          "metacriticScore": "94",
+          "metacriticLink": "/game/pc/bioshock-infinite",
+          "releaseDate": 1364169600,
+          "publisher": "2K Games",
+          "steamworks": "1",
+          "thumb": "https://steamcdn-a.akamaihd.net/steam/apps/8870/capsule_sm_120.jpg?t=1534538071"
+        },
+        "cheaperStores": [
+          {
+            "dealID": "EX0oH20b7A1H2YiVjvVx5A0HH%2F4etw3x%2F6YMGVPpKbA%3D",
+            "storeID": "2",
+            "salePrice": "7.00",
+            "retailPrice": "29.99"
+          },
+          {
+            "dealID": "z4El8C19yCEHrk1%2ByEedebThQVbblI7H0Z%2BAmxgZiS8%3D",
+            "storeID": "3",
+            "salePrice": "6.99",
+            "retailPrice": "29.99"
+          }
+        ],
+        "cheapestPrice": {
+          "price": "5.90",
+          "date": 1528368365
+        }
       },
       {
-        "internalName": "THIEFIITHEMETALAGE",
-        "title": "Thief II: The Metal Age",
-        "metacriticLink": "/game/pc/thief-ii-the-metal-age",
-        "dealID": "TlzUCY9p3Sq1bY%2Br4aGWO5Cs2UxE1lYnuQD05gxNwIM%3D",
-        "storeID": "1",
-        "gameID": "87640",
-        "salePrice": "0.97",
-        "normalPrice": "6.99",
-        "isOnSale": "1",
-        "savings": "86.123033",
-        "metacriticScore": "87",
-        "steamRatingText": "Very Positive",
-        "steamRatingPercent": "93",
-        "steamRatingCount": "1189",
-        "steamAppID": "211740",
-        "releaseDate": 953769600,
-        "lastChange": 1621540630,
-        "dealRating": "9.4",
-        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/211740/capsule_sm_120.jpg?t=1592493747"
+        "gameInfo": {
+          "storeID": "2",
+          "gameID": "93503",
+          "name": "BioShock Infinite 2",
+          "steamAppID": "8870",
+          "salePrice": "7.49",
+          "retailPrice": "29.99",
+          "steamRatingText": "Overwhelmingly Positive",
+          "steamRatingPercent": "95",
+          "steamRatingCount": "52167",
+          "metacriticScore": "94",
+          "metacriticLink": "/game/pc/bioshock-infinite",
+          "releaseDate": 1364169600,
+          "publisher": "2K Games",
+          "steamworks": "1",
+          "thumb": "https://steamcdn-a.akamaihd.net/steam/apps/8870/capsule_sm_120.jpg?t=1534538071"
+        },
+        "cheaperStores": [],
+        "cheapestPrice": {
+          "price": "5.90",
+          "date": 1528368365
+        }
       },
       {
-        "internalName": "DUNGEONSIEGE",
-        "title": "Dungeon Siege",
-        "metacriticLink": "/game/pc/dungeon-siege",
-        "dealID": "Hli8KbDatTjYjj%2BjpnfUuVKjxPwQPmblW1llCXyMMmU%3D",
-        "storeID": "1",
-        "gameID": "192",
-        "salePrice": "0.97",
-        "normalPrice": "6.99",
-        "isOnSale": "1",
-        "savings": "86.123033",
-        "metacriticScore": "86",
-        "steamRatingText": "Mostly Positive",
-        "steamRatingPercent": "78",
-        "steamRatingCount": "2394",
-        "steamAppID": "39190",
-        "releaseDate": 1017532800,
-        "lastChange": 1621540893,
-        "dealRating": "9.3",
-        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/39190/capsule_sm_120.jpg?t=1592491243"
-      },
-      {
-        "internalName": "TOMBRAIDERANNIVERSARY",
-        "title": "Tomb Raider: Anniversary",
-        "metacriticLink": "/game/pc/tomb-raider-anniversary",
-        "dealID": "ryaV37fbWkAIG6ZLy%2FtViuEGOIShgUVV7kpgbYlDqQk%3D",
-        "storeID": "1",
-        "gameID": "456",
-        "salePrice": "0.98",
-        "normalPrice": "8.99",
-        "isOnSale": "1",
-        "savings": "89.098999",
-        "metacriticScore": "83",
-        "steamRatingText": "Very Positive",
-        "steamRatingPercent": "82",
-        "steamRatingCount": "3621",
-        "steamAppID": "8000",
-        "releaseDate": 1181001600,
-        "lastChange": 1621540355,
-        "dealRating": "9.3",
-        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/8000/capsule_sm_120.jpg?t=1592494287"
-      },
-      {
-        "internalName": "TOMBRAIDER",
-        "title": "Tomb Raider",
-        "metacriticLink": "/game/pc/tomb-raider",
-        "dealID": "kWwtV4oy9hfOjwLK521is0GJsspEXRq8K6pQKH6xvI0%3D",
-        "storeID": "1",
-        "gameID": "87392",
-        "salePrice": "2.24",
-        "normalPrice": "14.99",
-        "isOnSale": "1",
-        "savings": "85.056704",
-        "metacriticScore": "86",
-        "steamRatingText": "Overwhelmingly Positive",
-        "steamRatingPercent": "96",
-        "steamRatingCount": "113310",
-        "steamAppID": "203160",
-        "releaseDate": 1362355200,
-        "lastChange": 1621536141,
-        "dealRating": "9.2",
-        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/203160/capsule_sm_120.jpg?t=1617888669"
-      },
-      {
-        "internalName": "F12020",
-        "title": "F1 2020",
-        "metacriticLink": "/game/pc/f1-2020",
-        "dealID": "l0PK4iJqTcB%2FhSle7RF7n7NGkOhHslBSff8Umv%2BzSeY%3D",
-        "storeID": "1",
-        "gameID": "213774",
-        "salePrice": "14.99",
-        "normalPrice": "59.99",
-        "isOnSale": "1",
-        "savings": "75.012502",
-        "metacriticScore": "88",
-        "steamRatingText": "Very Positive",
-        "steamRatingPercent": "93",
-        "steamRatingCount": "28641",
-        "steamAppID": "1080110",
-        "releaseDate": 1594252800,
-        "lastChange": 1621535931,
-        "dealRating": "9.1",
-        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1080110/capsule_sm_120.jpg?t=1621526432"
-      },
-      {
-        "internalName": "TOMBRAIDERUNDERWORLD",
-        "title": "Tomb Raider: Underworld",
-        "metacriticLink": "/game/pc/tomb-raider-underworld",
-        "dealID": "XhdaphoqPFV2dl6MtPYcKItazwVt9ldkx4ybvnmPfZ0%3D",
-        "storeID": "1",
-        "gameID": "643",
-        "salePrice": "0.98",
-        "normalPrice": "8.99",
-        "isOnSale": "1",
-        "savings": "89.098999",
-        "metacriticScore": "80",
-        "steamRatingText": "Mostly Positive",
-        "steamRatingPercent": "76",
-        "steamRatingCount": "3549",
-        "steamAppID": "8140",
-        "releaseDate": 1226966400,
-        "lastChange": 1621540596,
-        "dealRating": "9.1",
-        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/8140/capsule_sm_120.jpg?t=1592494880"
+        "gameInfo": {
+          "storeID": "3",
+          "gameID": "93503",
+          "name": "BioShock Infinite 2",
+          "steamAppID": "8870",
+          "salePrice": "7.49",
+          "retailPrice": "29.99",
+          "steamRatingText": "Overwhelmingly Positive",
+          "steamRatingPercent": "95",
+          "steamRatingCount": "52167",
+          "metacriticScore": "94",
+          "metacriticLink": "/game/pc/bioshock-infinite",
+          "releaseDate": 1364169600,
+          "publisher": "2K Games",
+          "steamworks": "1",
+          "thumb": "https://steamcdn-a.akamaihd.net/steam/apps/8870/capsule_sm_120.jpg?t=1534538071"
+        },
+        "cheaperStores": [],
+        "cheapestPrice": {
+          "price": "5.90",
+          "date": 1528368365
+        }
       }
     ]
   }
@@ -206,7 +170,7 @@ export class MockDealsApiService implements IDealsApiService {
     return of(this.allDeals.filter(d => onSale ? d.isOnSale === '1' : d.isOnSale === '0'));
   }
 
-  getDealByID(id: string): Observable<IServerDeal  | undefined> {
-    return of(this.allDeals.find(d => d.dealID === id));
+  getDealByID(id: string): Observable<IServerDealDetail  | undefined> {
+    return of(this.allDealsDetails[this.allDeals.indexOf(this.allDeals.find(d => d.dealID) as IServerDeal)]);
   }
 }

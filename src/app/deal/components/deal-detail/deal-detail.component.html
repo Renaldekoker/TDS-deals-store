@@ -1,0 +1,39 @@
+<div class="deal-detail-container flex-grid" *ngIf="deal">
+  <div class="col-2">
+    <div class="row">
+      <h3>{{title}}</h3>
+      <p class="price">
+        <span class="price" style="text-decoration: line-through">${{deal.price}} </span>
+        <span class="sale-price"> ${{deal.salePrice}}</span>
+        <span class="savings" *ngIf="deal.savings">you save ${{deal.savings}}</span>
+      </p>
+    </div>
+    <div class="row gray store">
+      <h4>{{deal.storeName}}</h4>
+    </div>
+    <div class="row">
+      <img class="thumb" [src]="deal.thumb" alt="deal-thumbnail"/>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="row gray store">
+      <h4>Other deals for this game</h4>
+    </div>
+    <div class="row other-deal" *ngFor="let other of deal.cheaperStores">
+        <h5>{{other.storeName}}</h5>
+
+        <span class="price" style="text-decoration: line-through">${{other.retailPrice}} </span>
+        <span class="sale-price"> ${{other.salePrice}}</span>
+
+        <div class="view-deal-btn" (click)="viewDeal(other.dealID)">
+          View More
+        </div>
+    </div>
+  </div>
+</div>
+<div class="flex-grid">
+  <div class="loading" *ngIf="!deal">
+    <img src="assets/img/logos/spinner.gif" alt="loading spinner"  width="150" />
+  </div>
+</div>
+

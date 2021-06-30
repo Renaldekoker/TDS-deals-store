@@ -9,8 +9,4 @@ export class DealQuery extends QueryEntity<DealState> {
     super(store);
     this.createUIQuery();
   }
-
- /* selectLoadingEntity(id: ID): Observable<boolean> {
-    return this.ui.selectEntity(id, 'isLoading');
-  }*/
 }
