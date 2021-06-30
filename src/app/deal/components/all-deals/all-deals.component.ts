@@ -77,7 +77,6 @@ export class AllDealsComponent implements OnInit, OnDestroy {
   }
 
   filterBy(onSale: boolean): void {
-    console.log(onSale);
     this.facadeService.fetchDeals(onSale);
   }
 

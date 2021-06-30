@@ -21,7 +21,7 @@ export class MockDealsApiService implements IDealsApiService {
         "gameID": "102249",
         "salePrice": "2.99",
         "normalPrice": "19.99",
-        "isOnSale": "1",
+        "isOnSale": "0",
         "savings": "85.042521",
         "metacriticScore": "91",
         "steamRatingText": "Very Positive",

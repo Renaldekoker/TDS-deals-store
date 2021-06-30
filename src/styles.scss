@@ -53,6 +53,11 @@ body {
     display: block;
     max-width: 95%;
   }
+
+  .col, .col-2, .col-3, .col-4 {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
 }
 
 

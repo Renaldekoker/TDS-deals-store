@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { DealStore } from "../state/deal.store";
 import { IDealsApiService } from "./i-deals-api.service";
-import {isEmpty, map, tap} from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { DealQuery } from "../state/deal.query";
 import { IDeal } from "../state/models/deal.model";
-import { ID, withTransaction } from "@datorama/akita";
+import { ID } from "@datorama/akita";
 import { StoreFacadeService } from "../../store/services/store-facade.service";
 import { IDealDetail } from "../state/models/deal-detail.model";
-import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {StoreStore} from "../state/store.store";
-import {StoreQuery} from "../state/store.query";
-import {IStoresApiService} from "./i-stores-api.service";
-import {ID} from "@datorama/akita";
-import {DealQuery} from "../../deal/state/deal.query";
+import { StoreStore } from "../state/store.store";
+import { StoreQuery } from "../state/store.query";
+import { IStoresApiService } from "./i-stores-api.service";
+import { ID } from "@datorama/akita";
+import { DealQuery } from "../../deal/state/deal.query";
 
 @Injectable({
   providedIn: 'root'

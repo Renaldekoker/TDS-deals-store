@@ -5,7 +5,7 @@ export abstract class IStoresApiService {
   protected constructor() { }
 
   /*
-  * Return all deals and filter by optional filter params
+  * Return all stores
   * */
   abstract getAllStores(): Observable<IStore[]>;
 }

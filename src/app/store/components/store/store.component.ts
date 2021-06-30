@@ -1,7 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IDeal} from "../../../deal/state/models/deal.model";
-import {Router} from "@angular/router";
-import {ID} from "@datorama/akita";
 import {IStore} from "../../state/models/store.model";
 
 @Component({

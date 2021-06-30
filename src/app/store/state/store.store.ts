@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EntityState, EntityStore, EntityUIStore, ID, StoreConfig} from '@datorama/akita';
+import {EntityState, EntityStore, StoreConfig} from '@datorama/akita';
 import {IStore, IStoreUI} from "./models/store.model";
 
 

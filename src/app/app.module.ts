@@ -39,7 +39,7 @@ import { StoreComponent } from './store/components/store/store.component';
     BrowserAnimationsModule
   ],
   providers: [
-    { provide: IDealsApiService, useClass: /*environment.production ?*/ DealsApiService /*: MockDealsApiService*/ },
+    { provide: IDealsApiService, useClass: environment.production ? DealsApiService : MockDealsApiService },
     { provide: IStoresApiService, useClass: StoresApiService }
   ],
   bootstrap: [AppComponent]

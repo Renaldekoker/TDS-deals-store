@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {EntityUIQuery, ID, QueryEntity} from '@datorama/akita';
-import {Observable} from 'rxjs/index';
-import {DealState, DealStore, DealUIState} from "./deal.store";
+import { QueryEntity } from '@datorama/akita';
+import { DealState, DealStore } from "./deal.store";
 
 @Injectable({ providedIn: 'root' })
 export class DealQuery extends QueryEntity<DealState> {
@@ -10,6 +9,9 @@ export class DealQuery extends QueryEntity<DealState> {
     this.createUIQuery();
   }
 
+  /*
+  * Count amount of deals a store has
+  * */
   countStoreDeals(storeID: string): number {
     return this.getAll().filter(d => d.storeID === storeID).length;
   }

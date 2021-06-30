@@ -30,23 +30,25 @@ describe('DealFacadeService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should only fetch deals on sale', () => {
-    service.fetchDeals(true);
+  it('should only fetch deals on sale', async() => {
+   await service.fetchDeals(true);
     const sub = service.allDeals$.subscribe(
       deals => {
-        console.log(JSON.stringify(deals, null, 2))
+        // console.log(JSON.stringify(deals, null, 2))
         expect(deals.map(d => d.isOnSale).indexOf(false) == -1).toBeTruthy()
+        expect(deals.length).toBeGreaterThan(0);
       }
     )
     sub.unsubscribe();
   });
 
-  it('should only fetch deals not on sale', () => {
-    service.fetchDeals(false);
+  it('should only fetch deals not on sale', async() => {
+    await service.fetchDeals(false);
     const sub = service.allDeals$.subscribe(
       deals => {
-        console.log(JSON.stringify(deals, null, 2))
+        // console.log(JSON.stringify(deals, null, 2))
         expect(deals.map(d => d.isOnSale).indexOf(true) == -1).toBeTruthy()
+        expect(deals.length).toBeGreaterThan(0);
       }
     )
     sub.unsubscribe();
