@@ -1,0 +1,9 @@
+<div class="store-container" *ngIf="store">
+  <h4 class="name">{{store.storeName}}</h4>
+  <p class="deals" *ngIf="numDeals">
+    {{numDeals}} {{numDeals > 1 ? ' deals' : 'deal'}}
+  </p>
+  <div class="view-deal-btn">
+    View More
+  </div>
+</div>

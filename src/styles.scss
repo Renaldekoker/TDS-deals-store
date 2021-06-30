@@ -19,6 +19,10 @@ body {
     flex-basis: 100%;
     height: 0;
   }
+
+  .row {
+    flex: 1 0 100%;
+  }
 }
 
 .col {
@@ -48,6 +52,11 @@ body {
   .flex-grid {
     display: block;
     max-width: 95%;
+  }
+
+  .col, .col-2, .col-3, .col-4 {
+    flex: 1 0 100%;
+    max-width: 100%;
   }
 }
 

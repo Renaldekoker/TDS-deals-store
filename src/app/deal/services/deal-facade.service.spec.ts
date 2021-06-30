@@ -4,6 +4,7 @@ import { IDealsApiService } from './i-deals-api.service';
 import { DealQuery } from '../state/deal.query';
 import { DealFacadeService } from './deal-facade.service';
 import {MockDealsApiService} from "./mock-deals-api.service";
+import {IStoresApiService} from "../../store/services/i-stores-api.service";
 
 describe('DealFacadeService', () => {
   let service: DealFacadeService;
@@ -16,7 +17,8 @@ describe('DealFacadeService', () => {
         DealFacadeService,
         {provide: IDealsApiService, useClass: MockDealsApiService},
         DealStore,
-        DealQuery
+        DealQuery,
+        IStoresApiService
       ]
     });
     service = TestBed.inject(DealFacadeService);
@@ -28,23 +30,25 @@ describe('DealFacadeService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should only fetch deals on sale', () => {
-    service.fetchDeals(true);
+  it('should only fetch deals on sale', async() => {
+   await service.fetchDeals(true);
     const sub = service.allDeals$.subscribe(
       deals => {
-        console.log(JSON.stringify(deals, null, 2))
+        // console.log(JSON.stringify(deals, null, 2))
         expect(deals.map(d => d.isOnSale).indexOf(false) == -1).toBeTruthy()
+        expect(deals.length).toBeGreaterThan(0);
       }
     )
     sub.unsubscribe();
   });
 
-  it('should only fetch deals not on sale', () => {
-    service.fetchDeals(false);
+  it('should only fetch deals not on sale', async() => {
+    await service.fetchDeals(false);
     const sub = service.allDeals$.subscribe(
       deals => {
-        console.log(JSON.stringify(deals, null, 2))
+        // console.log(JSON.stringify(deals, null, 2))
         expect(deals.map(d => d.isOnSale).indexOf(true) == -1).toBeTruthy()
+        expect(deals.length).toBeGreaterThan(0);
       }
     )
     sub.unsubscribe();

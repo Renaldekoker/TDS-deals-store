@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DealFacadeService} from "../../services/deal-facade.service";
 import {Observable, Subject} from "rxjs";
-import {IDeal} from "../../state/deal.model";
+import {IDeal} from "../../state/models/deal.model";
 import {map, debounceTime, distinctUntilChanged, switchMap, takeUntil} from "rxjs/operators";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 
@@ -77,7 +77,6 @@ export class AllDealsComponent implements OnInit, OnDestroy {
   }
 
   filterBy(onSale: boolean): void {
-    console.log(onSale);
     this.facadeService.fetchDeals(onSale);
   }
 

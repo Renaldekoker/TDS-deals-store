@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IDeal} from "../../state/deal.model";
+import {IDeal} from "../../state/models/deal.model";
 import {ID} from "@datorama/akita";
 import {Router} from "@angular/router";
 
@@ -20,7 +20,10 @@ export class DealComponent implements OnInit {
   }
 
   viewDeal(id: ID): void {
-    this.router.navigate(['deal', id]);
+    if(!this.deal) {
+      return;
+    }
+    this.router.navigate(['deal', id, this.deal.title]);
   }
 
 }

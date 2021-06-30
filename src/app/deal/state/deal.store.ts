@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {EntityState, EntityStore, EntityUIStore, ID, StoreConfig} from '@datorama/akita';
-import {IDeal, IDealUI} from "./deal.model";
+import {EntityState, EntityStore, StoreConfig} from '@datorama/akita';
+import {IDeal, IDealUI} from "./models/deal.model";
 
 
 export interface DealState extends EntityState<IDeal> {}

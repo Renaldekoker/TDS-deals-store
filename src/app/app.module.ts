@@ -14,6 +14,11 @@ import { BottomNavComponent } from './common/components/bottom-nav/bottom-nav.co
 import {AkitaNgDevtools} from "@datorama/akita-ngdevtools";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { DealDetailComponent } from './deal/components/deal-detail/deal-detail.component';
+import {IStoresApiService} from "./store/services/i-stores-api.service";
+import {StoresApiService} from "./store/services/stores-api.service";
+import { AllStoresComponent } from './store/components/all-stores/all-stores.component';
+import { StoreComponent } from './store/components/store/store.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AllDealsComponent,
     TopNavComponent,
     DealComponent,
-    BottomNavComponent
+    BottomNavComponent,
+    DealDetailComponent,
+    AllStoresComponent,
+    StoreComponent
   ],
   imports: [
     AkitaNgDevtools.forRoot(),
@@ -31,7 +39,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule
   ],
   providers: [
-    { provide: IDealsApiService, useClass: environment.production ? DealsApiService : MockDealsApiService }
+    { provide: IDealsApiService, useClass: environment.production ? DealsApiService : MockDealsApiService },
+    { provide: IStoresApiService, useClass: StoresApiService }
   ],
   bootstrap: [AppComponent]
 })

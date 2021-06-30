@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {DealFacadeService} from "./deal/services/deal-facade.service";
+import {StoreFacadeService} from "./store/services/store-facade.service";
 
 @Component({
   selector: 'app-root',
